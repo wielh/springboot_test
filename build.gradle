@@ -1,0 +1,31 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.2.0'
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly 'org.projectlombok:lombok:0.11.0'
+	// https://mvnrepository.com/artifact/com.github.ben-manes.caffeine/caffeine
+	implementation group: 'com.github.ben-manes.caffeine', name: 'caffeine', version: '3.1.5'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
