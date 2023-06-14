@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Repository
 @RequiredArgsConstructor
-public class UserDao {
+public class UserDaoImpl implements UserDao{
 	
 	@Autowired
 	private final JdbcTemplate jdbcTemplate;

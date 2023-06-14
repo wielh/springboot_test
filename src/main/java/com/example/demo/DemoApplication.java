@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class DemoApplication {
 	@Autowired User user;
 	@Autowired UserDao userDao;
+	
 	// note that cache and loading_cache is thread_safe
 	static Cache<String, User> graphs = Caffeine.newBuilder()
 			.maximumSize(100)
